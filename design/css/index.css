@@ -1,0 +1,112 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+
+/*
+* Geral
+*/
+:root {
+  --primary: #9DA65D;
+  --secondary: #2D77A6;
+  --utils: #F2F2F2;
+}
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: var(--utils);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.button {
+    color: var(--utils);
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: var(--secondary);
+    font-size: .9em;
+    border-radius: 3px;
+}
+
+/*
+* Nav
+*/
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+}
+
+nav > a {
+    text-decoration: none;
+    color: var(--utils);
+    font-weight: 700;
+    font-size: 20px;
+    font-family: Arial, serif;
+}
+
+#id {
+    display: block;
+    float: right;
+    margin-right: 10px;
+}
+
+/*
+* Header
+*/
+
+header {
+    background-image: url(../../files/images/book2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header p {
+    margin-bottom: 2em;
+}
+
+/*
+* #App
+*/
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: var(--utils);
+}
+
+#app p {
+    margin-bottom: 2.5em;
+    color: var(--secondary);
+}
+
+#app div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*
+* Footer
+*/
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--utils)
+}
