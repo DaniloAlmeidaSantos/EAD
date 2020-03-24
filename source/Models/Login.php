@@ -7,9 +7,9 @@ class Login {
 
         $this->conn = connect();
 
-        if (isset($_COOKIE['user'])) {
+        if (isset($_COOKIE['id'])) {
             $_SESSION['login']  = "Fazer upload de aulas";
-            $_SESSION['link']   = "view/upload.php";
+            $_SESSION['link']   = "view/preUpload.php";
         } else {
             $_SESSION['login']  = "Fazer login";
             $_SESSION['link']   = "login.php";
@@ -25,16 +25,12 @@ class Login {
 
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    setcookie('user', $row["EMAIL"]);
-                    $_SESSION['login']  = "Fazer upload de aulas";
-                    $_SESSION['link']   = "view/upload.php";
+                    setcookie('id', $row["ID"]);
                     header('location: index.php');
                 }
                 $error = null;
             } else {
                 $_SESSION['error']  = "Por favor insira e-mail e senha corretamente";
-                $_SESSION['login']  = "Fazer login";
-                $_SESSION['link']   = "login.php";
             }
             
         } catch (PDOException $e) {
