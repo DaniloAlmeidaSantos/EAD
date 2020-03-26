@@ -13,10 +13,14 @@ if (isset($_POST['btnProsseguir'])) {
         'turma'             => $_POST['selectSerie']
     );
 
-    if ($materia->cadastrarMateria($_POST['selectDisciplina'], $_POST['txtNomeMateria'], $_POST['txtDescMateria'])){
-        $materia->getId();
-        header('location: ../../view/upload.php');
+    if (isset($_POST['addMateria'])) {
+        if ($materia->cadastrarMateria($_POST['selectDisciplina'], $_POST['txtNomeMateria'], $_POST['txtDescMateria'])){
+            $materia->getId();
+            header('location: ../../view/upload.php');
+        } else {
+            header('location: ../../view/preUpload.php');
+        }
     } else {
-        header('location: ../../view/preUpload.php');
+        header('location: ../../view/upload.php');
     }
 }
