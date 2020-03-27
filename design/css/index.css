@@ -74,6 +74,14 @@ nav a h1 {
     z-index: 10;
 }
 
+#arrow{
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    font-size: 80px;
+    z-index: 10;
+}
+
 #id {
     display: block;
     float: right;
@@ -181,6 +189,10 @@ footer {
     color: #000;
 }
 
+.containerLogin{
+    text-align: center;
+}
+
 .containerLogin p:nth-child(1){
     font-size: 2em;
     text-align: center;
@@ -206,6 +218,14 @@ form a p {
     color: #ff0000;
 }
 
+.preupTitle{
+    position: relative;
+    width: 70%;
+    font-size: 1em;
+    margin: auto;
+    line-height: 20px;
+}
+
 #btnEntrar{
     background-color: #2E8111;
     width: 100%;
@@ -217,4 +237,96 @@ form a p {
     outline: none;
     /* background-color: transparent; */
     cursor: pointer;
+}
+
+#containerUpload{
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+form textarea{
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 4px;
+}
+
+.contTitle{
+    font-size: 1em;
+    line-height: 30px;
+}
+
+.containerSubject{
+    position: relative;
+    width: 90%;
+    height: 450px;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    overflow-y: scroll;
+}
+
+.wrapperSubjetct{
+    position: relative;
+    width: 45%;
+    height: 30%;
+    background-color: brown;
+    float: left;
+    margin-left: 2%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.wrapperSubjetct p{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    font-size: 6em;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-40%);
+    text-align: center;
+}
+
+.wrapperSubjetct h1{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    font-size: 1.3em;
+    top: 0;
+    text-align: center;
+}
+
+a:nth-child(1) .wrapperSubjetct{
+    background-color: #ffd528;
+}
+
+a:nth-child(2) .wrapperSubjetct{
+    background-color: #2c3ca7;
+}
+
+a:nth-child(3) .wrapperSubjetct{
+    background-color: #4b4b4b;
+}
+
+a:nth-child(4) .wrapperSubjetct{
+    background-color: #fa8005;
+}
+
+a:nth-child(5) .wrapperSubjetct{
+    background-color: #b34d8e;
+}
+
+a:nth-child(7) .wrapperSubjetct{
+    background-color: #2D77A6;
+}
+
+a:nth-child(8) .wrapperSubjetct{
+    background-color: #2E8111;
+}
+
+a:nth-child(9) .wrapperSubjetct{
+    background-color: #771051;
 }
