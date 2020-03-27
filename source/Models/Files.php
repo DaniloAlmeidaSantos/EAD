@@ -42,6 +42,7 @@ class Files {
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
+                $_SESSION['error'] = null;
                 return true;
             } else {
                 $_SESSION['error']  = "Não foi possível fazer upload deste arquivo no momento, tente mais tarde";
@@ -87,6 +88,7 @@ class Files {
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
+                $_SESSION['error'] = null;
                 return true;
             } else {
                 $_SESSION['error']  = "Não foi possível fazer upload deste arquivo no momento, tente mais tarde";

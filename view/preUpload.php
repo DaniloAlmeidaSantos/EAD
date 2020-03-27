@@ -7,10 +7,17 @@
 </head>
 <body>
     <h1>Preencha as informações requeridas</h1>
-    <h4>
+    <h4 id="erro">
         <?php
             if (isset($_SESSION['error'])) {
                 echo $_SESSION['error'];
+            }
+        ?>
+    </h4>
+    <h4>
+        <?php
+            if (isset($_GET['voltar'])) {
+                echo "Aula enviado com sucesso!! Se sinta a vontade para enviar novas aulas ou  <a href='../index.php'> volte ao ínicio </a>";
             }
         ?>
     </h4>

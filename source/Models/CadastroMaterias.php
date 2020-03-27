@@ -18,6 +18,7 @@ class CadastroMaterias{
             $stmt->execute();
 
             if ($stmt->rowCount() > 0){
+                $_SESSION['error'] = null;
                 return true;
             } else {
                 return false;
@@ -31,7 +32,7 @@ class CadastroMaterias{
         $stmt = $this->conn->prepare('SELECT ID FROM MATERIAS WHERE ID_PROFESSOR = ? ORDER BY ID DESC LIMIT 1');
         $stmt->bindParam(1, $_COOKIE['id'], PDO::PARAM_INT);
         $stmt->execute();
-
+        
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $_SESSION['idMateria'] = $row['ID'];
         }
@@ -47,8 +48,10 @@ class CadastroMaterias{
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $_SESSION['idMateria'] = $row['ID'];
             }
+            $_SESSION['error'] = null;
             return true;
         } else {
+            $_SESSION['error'] = "ERROR: Estamos enfrentando problemas para achar a matéria selecionada, tente novamente.";
             return false;
         }
     }
