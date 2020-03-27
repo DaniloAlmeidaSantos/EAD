@@ -11,7 +11,7 @@ class Login {
             $_SESSION['login']  = "Fazer upload de aulas";
             $_SESSION['link']   = "view/preUpload.php";
         } else {
-            $_SESSION['login']  = "Fazer login";
+            $_SESSION['login']  = "<span class='material-icons'>account_circle</span>";
             $_SESSION['link']   = "login.php";
         }
     }

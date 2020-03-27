@@ -12,11 +12,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design/css/index.css">
+    <link rel="stylesheet" href="design/css/normalize.css">
     <title>EAD - Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <h3>O login é exclusivo aos professores</h3>
+    <nav>
+        <div class="wrapperNav">
+            <a href="index.php" id="home"><span class="material-icons" id="home">home</span></a>
+            <a href="#"><h1>Login</h1></a>
+        </div>
+    </nav>
+
+    <div class="containerLogin">
+        <p>Olá Professor,</p>
+        <p>Tenha uma Boa Tarde!</p>
+    </div>
+
     <p style="color: red;">
         <?php 
             if (isset($_SESSION['error'])){
@@ -28,7 +40,8 @@
         <form action="" method="POST">
             <input type="text" name="txtEmail" placeholder="E-Mail" required>
             <input type="password" name="txtSenha" placeholder="Senha" required>
-            <button name="btnAcessar">Acessar</button>
+            <a href="#"><p>Esqueci minha senha</p></a>
+            <button id="btnEntrar" name="btnAcessar">Entrar</button>
         </form>
     </section>
     <footer>

@@ -20,42 +20,75 @@
 </head>
 <body>
     <nav>
-        <a href="#">Opção 1</a>
-        <a href="#">Opção 2</a>
-        <a href="#">Opção 3</a>
-        <a href="<?=$_SESSION['link']?>" id="link"><?=$_SESSION['login']?></a>
+        <div class="wrapperNav">
+            <a href="#"><h1>EAD</h1></a>
+            <a href="<?=$_SESSION['link']?>" id="link"><?=$_SESSION['login']?></a>
+        </div>
     </nav>
 
     <header>
-        <h1>Paulino Nunes Esposo</h1>
-        <h3>Plataforma EAD</h3>
-
-        <p>
-            Site em desenvolvimento...
-        </p>
-        <a href="#app" class="button">Pesquise a sua turma</a>
+        <div class="backgroundBlack"></div>
+        <div class="wrapperHeader">
+            <h1>EAD</h1>
+            <h3>Sistema para auxílio educacional dos estudantes perante à querentena.</h3>
+            <p>
+                É professor ? <a href="login.php">Entre aqui</a>
+            </p>
+        </div>
     </header>
 
-    <section id="app">
-        <div style="background-color:red;">
-            <h3>Turma 1</h3>
+    <div class="container">
+        <div class="wrapper">
+            1° Série
         </div>
 
-        <div style="background-color:red;">
-            <h3>Turma 2</h3>
-        </div>  
-
-        <div style="background-color:red;">
-            <h3>Turma 3</h3>
+        <div class="wrapper">
+            2° Série
         </div>
 
-        <div style="background-color:red;">
-            <h3>Turma 4</h3>
+        <div class="wrapper">
+            3° Série
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; Copyrigth 2020 - Todos direitos reservados</p>
-    </footer>
+        <div class="wrapper">
+            4° Série
+        </div>
+
+        <div class="wrapper">
+            5° Série
+        </div>
+
+        <div class="wrapper">
+            6° Série
+        </div>
+
+        <div class="wrapper">
+            7° Série
+        </div>
+
+        <div class="wrapper">
+            8° Série
+        </div>
+
+        <div class="wrapper">
+            1° Grau
+        </div>
+
+        <div class="wrapper">
+            2° Grau
+        </div>
+
+        <div class="wrapper">
+            3° Grau
+        </div>
+
+        <div class="wrapper">
+            outro
+        </div>
+    </div>
+
+    <!-- <footer>
+        &copy; Copyrigth 2020 - Todos direitos reservados
+    </footer> -->
 </body>
 </html>
