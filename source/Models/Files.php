@@ -8,7 +8,7 @@ class Files {
         $this->conn = connect();
     }
     
-    public function arquivoTexto($idTurma, $titulo, $descricao) {
+    public function arquivoTexto($idTurma, $titulo, $descricao, $idProfessor, $idMateria) {
         $_UP['folder']       = '../files/pdf/';
         $_UP['size']         = 1024*1024*5; // 5 MB
         $_UP['extensions']   = array('pdf', 'ppt', 'doc', 'docx');
@@ -37,8 +37,8 @@ class Files {
             $stmt->bindParam(2, $titulo, PDO::PARAM_STR);
             $stmt->bindParam(3, $descricao, PDO::PARAM_STR);
             $stmt->bindParam(4, $atividade, PDO::PARAM_STR);
-            $stmt->bindParam(5, $_COOKIE['id'], PDO::PARAM_INT);
-            $stmt->bindParam(6, $_SESSION['idMateria'], PDO::PARAM_INT);
+            $stmt->bindParam(5, $idProfessor, PDO::PARAM_INT);
+            $stmt->bindParam(6, $idMateria, PDO::PARAM_INT);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -53,7 +53,7 @@ class Files {
         }
     }
 
-    public function videoAula($idTurma, $titulo, $descricao) {
+    public function videoAula($idTurma, $titulo, $descricao, $idProfessor, $idMateria) {
         $_UP['folder']       = '../files/video/';
         $_UP['size']         = 1024*1024*50; // 50 MB
         $_UP['extensions']   = array('mp4', 'avi', 'wmv');
@@ -82,8 +82,8 @@ class Files {
             $stmt->bindParam(2, $titulo, PDO::PARAM_STR);
             $stmt->bindParam(3, $descricao, PDO::PARAM_STR);
             $stmt->bindParam(4, $video, PDO::PARAM_STR);
-            $stmt->bindParam(5, $_COOKIE['id'], PDO::PARAM_INT);
-            $stmt->bindParam(6, $_SESSION['idMateria'], PDO::PARAM_INT);
+            $stmt->bindParam(5, $idProfessor, PDO::PARAM_INT);
+            $stmt->bindParam(6, $idMateria, PDO::PARAM_INT);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {

@@ -4,7 +4,7 @@
     $materia = new Materias();
 
     if (isset($_POST['btnPesquisa'])) {
-        $_SESSION['txtNomeMateria'] = $_POST['txtNomeMatéria'];
+        $_SESSION['txtNomeMateria'] = $_POST['txtNomeMateria'];
         $_SESSION['txtDescMateria'] =  '';
 
         header('location: ../source/includes/upload.php?pesquisa=true');

@@ -6,13 +6,13 @@
     $array  = $_SESSION['preUpload'];
 
     if (isset($_POST['btnTexto'])) {
-        if ($conn->arquivoTexto($array['disciplinas'], $array['titulo'], $array['descDisciplina'])) {
+        if ($conn->arquivoTexto($array['disciplinas'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])) {
             header('location: preUpload.php?voltar=true');
         } else {
             echo $_SESSION['error'];
         } 
     } elseif (isset($_POST['btnVideo'])) {
-        if ($conn->videoAula($array['disciplinas'], $array['titulo'], $array['descDisciplina'])){
+        if ($conn->videoAula($array['disciplinas'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])){
             header('location: preUpload.php?voltar=true');
         } else {
             echo $_SESSION['error'];;
