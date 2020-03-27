@@ -10,7 +10,7 @@
             header('location: preUpload.php?voltar=true');
         } else {
             echo $_SESSION['error'];
-        }
+        } 
     } elseif (isset($_POST['btnVideo'])) {
         if ($conn->videoAula($array['disciplinas'], $array['titulo'], $array['descDisciplina'])){
             header('location: preUpload.php?voltar=true');
