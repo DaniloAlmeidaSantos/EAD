@@ -20,8 +20,10 @@ class Materias {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<a href='conteudo.php?idMateria=$row[ID]'></a>";
                 }
+                $_SESSION['error'] = null;
+                return true;
             } else {
-
+                return false;
             }
         } catch (PDOException $e) {
             $_SESSION['error'] = "ERROR: " . $e->getMesssage();

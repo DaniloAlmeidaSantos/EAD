@@ -28,7 +28,7 @@ class Login {
                     setcookie('id', $row["ID"]);
                     header('location: index.php');
                 }
-                $error = null;
+                $_SESSION['error'] = null;
             } else {
                 $_SESSION['error']  = "Por favor insira e-mail e senha corretamente";
             }

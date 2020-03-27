@@ -3,24 +3,43 @@ session_start();
 require_once '../Models/CadastroMaterias.php';
 $materia = new CadastroMaterias();
 
-if (isset($_POST['btnProsseguir'])) {
+if ($_SESSION['idProfessor']) {
+    $id = $_SESSION['idProfessor'];
+} else {
+    $id = $_COOKIE['id'];
+}
+
+if (isset($_GET['pesquisa'])) {
     $_SESSION['preUpload'] = array(
-        'titulo'            => $_POST['txtTitulo'], 
-        'disciplinas'       => $_POST['selectDisciplina'],
-        'descDisciplina'    => $_POST['txtDescDisciplina'],
-        'nomeMateria'       => $_POST['txtNomeMateria'],
-        'descMateria'       => $_POST['txtDescMateria'],
-        'turma'             => $_POST['selectSerie']
+        'titulo'            => $_SESSION['txtTitulo'], 
+        'disciplinas'       => $_SESSION['selectDisciplina'],
+        'descDisciplina'    => $_SESSION['txtDescDisciplina'],
+        'nomeMateria'       => $_SESSION['txtNomeMateria'],
+        'descMateria'       => $_SESSION['txtDescMateria'],
+        'turma'             => $_SESSION['selectSerie'],
+        'idProfessor'       => $id
     );
 
-    if (isset($_POST['addMateria'])) {
-        if ($materia->cadastrarMateria($_POST['selectDisciplina'], $_POST['txtNomeMateria'], $_POST['txtDescMateria'])){
-            $materia->getId();
-            header('location: ../../view/upload.php');
-        } else {
-            header('location: ../../view/preUpload.php');
-        }
-    } else {
+    var_dump($_SESSION['preUpload']);
+    if ($materia->getIdPesquisa($_SESSION['txtNomeMateria'], $_SESSION['idProfessor'])) {
         header('location: ../../view/upload.php');
+    } else {
+        //header('location: ../../view/preUpload.php');
     }
-}
+} elseif (isset($_GET['cadastro'])) {
+    $_SESSION['preUpload'] = array(
+        'titulo'            => $_SESSION['txtTitulo'], 
+        'disciplinas'       => $_SESSION['selectDisciplina'],
+        'descDisciplina'    => $_SESSION['txtDescDisciplina'],
+        'nomeMateria'       => $_SESSION['txtNomeMateria'],
+        'descMateria'       => $_SESSION['txtDescMateria'],
+        'turma'             => $id
+    );
+
+    if ($materia->cadastrarMateria($_SESSION['selectDisciplina'], $_SESSION['txtNomeMateria'], $_SESSION['txtDescMateria'], $_COOKIE['id'])){
+        $materia->getId();
+        header('location: ../../view/upload.php');
+    } else {
+        header('location: ../../view/preUpload.php');
+    }
+} 

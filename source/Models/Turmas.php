@@ -17,7 +17,7 @@ class Turmas {
                 #code
             }
         } catch (PDOException $e) {
-            $error = "ERROR: " . $e;
+            $_SESSION['error'] = "ERROR: " . $e;
         }
     }
 
@@ -30,7 +30,7 @@ class Turmas {
                 #code
             }
         } catch (PDOException $e) {
-            $error = "ERROR: " . $e;
+            $_SESSION['error'] = "ERROR: " . $e;
         }
     }
 
@@ -42,6 +42,7 @@ class Turmas {
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
+                $_SESSION['error'] = null;
                 return true;
             } else {
                 return false;
