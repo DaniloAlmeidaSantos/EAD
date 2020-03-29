@@ -330,3 +330,168 @@ a:nth-child(8) .wrapperSubjetct{
 a:nth-child(9) .wrapperSubjetct{
     background-color: #771051;
 }
+
+.containerMateria{
+    position: relative;
+    width: 90%;
+    color: #000;
+    font-size: 1.5em;
+    margin: auto;
+    text-align: center;
+}
+
+.containerMateria{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 4%;
+}
+
+.wrapperMateria{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    overflow-y: scroll;
+}
+
+.wrapperMateria a button{
+    background-color: #2E8111;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 0.8em;
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    margin: 2%, 0%, 2%, 0%;
+}
+
+.containerVideo{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.4), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.wrapperImgVideo{
+    width: 100%;
+    height: 200px;
+    background-color: #ff0000;
+}
+
+.wrapperImgVideo img{
+    width: 100%;
+    height: 100px;
+}
+
+.titleVideo{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #2E8111;
+}
+
+.titleVideo .innerTitleImg{
+    position: relative;
+    width: 55px;
+    height: 55px;
+    float: left;
+    border-radius: 55%;
+    background-color: #fff;
+    left: 2%;
+    top: 3%;
+}
+
+.titleVideo .innerTitle h2{
+    position: relative;
+    width: 75%;
+    height: 50%;
+    right: 0;
+    float: right;
+    font-size: 1.5em;
+    margin-top: 2%;
+}
+
+.titleVideo .innerTitle h3{
+    position: relative;
+    width: 75%;
+    height: 50%;
+    right: 0;
+    float: right;
+    font-size: 1em;
+}
+
+.containerReproducao{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.containerReproducao h1{
+    font-size: 1.5em;
+    color: #000;
+}
+
+.wrapperVideo{
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    background-color: #000;
+}
+
+.wrapperContent{
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    background-color: #2E8111;
+    overflow-y: scroll;
+}
+
+.Squarefile{
+    margin: 2.5% 2.5% 4% 2.5%;
+    position: relative;
+    width: 45%;
+    height: 60%;
+    float: left;
+    background-color: #fff;
+}
+
+.fileName{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    float: left;
+    background-color: #2E8111;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
