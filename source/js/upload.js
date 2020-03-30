@@ -1,5 +1,5 @@
-var selectElement       = document.querySelector("#select");
-var buttonElement       = document.querySelector("#btnUpload");
+var selectElement       = document.querySelector("#tipo");
+var buttonElement       = document.querySelector("button");
 
 buttonElement.setAttribute('name', 'btnTexto');
 

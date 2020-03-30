@@ -24,7 +24,7 @@ if (isset($_GET['pesquisa'])) {
     if ($materia->getIdPesquisa($_SESSION['txtNomeMateria'], $_SESSION['idProfessor'])) {
         header('location: ../../view/upload.php');
     } else {
-        //header('location: ../../view/preUpload.php');
+        header('location: ../../view/preUpload.php');
     }
 } elseif (isset($_GET['cadastro'])) {
     $_SESSION['preUpload'] = array(
@@ -33,10 +33,11 @@ if (isset($_GET['pesquisa'])) {
         'descDisciplina'    => $_SESSION['txtDescDisciplina'],
         'nomeMateria'       => $_SESSION['txtNomeMateria'],
         'descMateria'       => $_SESSION['txtDescMateria'],
-        'turma'             => $id
+        'turma'             => $_SESSION['selectSerie'],
+        'idProfessor'       => $id
     );
 
-    if ($materia->cadastrarMateria($_SESSION['selectDisciplina'], $_SESSION['txtNomeMateria'], $_SESSION['txtDescMateria'], $_COOKIE['id'])){
+    if ($materia->cadastrarMateria($_SESSION['selectDisciplina'], $_SESSION['txtNomeMateria'], $_SESSION['txtDescMateria'], $_COOKIE['id'], $_SESSION['selectSerie'])){
         $materia->getId();
         header('location: ../../view/upload.php');
     } else {

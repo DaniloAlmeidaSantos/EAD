@@ -5,32 +5,39 @@ class Materias {
     public function __construct() {
         require_once '../source/config.php';
 
-        $conn = connect();
+        $this->conn = connect();
     }
 
     public function getMaterias($idDisciplina, $idTurma) {
         try {
-            $stmt = $this->conn->prepare('SELECT * FROM MATERIAS INNER JOIN ATIVIDADES INNER JOIN VIDEO_AULAS INNER JOIN TURMAS WHERE MATERIAS.ID_DISCIPLINA = ? AND TURMAS.ID = ATIVIDADES.ID_TURMA AND TURMAS.ID = VIDEO_AULAS.ID_TURMA');
-            $stmt->bindParam(1, $idDisciplina, PDO::PARAM_INT);
-            $stmt->bindParam(2, $idTurma, PDO::PARAM_INT);
-            $stmt->bindParam(3, $idTurma, PDO::PARAM_INT);
+            $stmt = $this->conn->prepare("SELECT m.id AS m_id, m.NOME_MATERIA, p.NOME, m.ID_TURMA AS m_idTurma FROM MATERIAS AS m INNER JOIN PROFESSORES AS p WHERE m.ID_TURMA = ? AND m.ID_DISCIPLINA = ? AND m.ID_PROFESSOR = p.ID");
+            $stmt->bindParam(1, $idTurma, PDO::PARAM_INT);
+            $stmt->bindParam(2, $idDisciplina, PDO::PARAM_INT);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<a href='conteudo.php?idMateria=$row[ID]'></a>";
+                    echo "<div class='wrapperImgVideo'>
+                            <a href='conteudo.php?{$row['m_id']}'><img src='' alt=''></a>
+
+                            <div class='titleVideo'>
+                                <div class='innerTitleImg'>
+                                    <img src='' alt=''>
+                                </div>
+                                <div class='innerTitle'>
+                                    <h2>Matéria: {$row['NOME_MATERIA']}</h2>
+                                    <h3>Por: {$row['idTurma']}</h3>
+                                </div>
+                            </div>
+                        </div>";
                 }
-                $_SESSION['error'] = null;
                 return true;
             } else {
+                echo "<p style='color: black'>Nenhum registro encontrado... </p>";
                 return false;
             }
         } catch (PDOException $e) {
-            $_SESSION['error'] = "ERROR: " . $e->getMesssage();
+            echo $e;
         }
-    }
-
-    public function pesquisaMaterias() {
-        
     }
 }

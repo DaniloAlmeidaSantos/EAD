@@ -24,26 +24,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../design/css/index.css">
+    <link rel="stylesheet" href="../design/css/normalize.css">
     <title>EAD - Upload</title>
 </head>
 <body>
-    <h1>Enviar arquivos para as aulas</h1>
-    <h4>
-        <?php
-            if (isset($_SESSION['error'])) {
-                echo $_SESSION['error'];
-            }
-        ?>
-    </h4>
-    <section>
-        <label>Qual o tipo de material</label>
-        <select name="material" id="select">
+    <nav>
+        <div class="wrapperNav">
+            <a href="preUpload.php" id="home"><span class="material-icons" id="home">arrow_back</span></a>
+            <a href="#"><h1 class="preupTitle">Preencha as informações</h1></a>
+        </div>
+    </nav>
+
+    <div class="containerLogin">
+        <h5>Enviar arquivos das aulas</h5>
+    </div>
+
+    <section id="containerUpload">
+        <p style="color: red;">
+            <?php 
+                if (isset($_SESSION['error'])){
+                    echo $_SESSION['error'];
+                }
+            ?>
+        </p>
+        
+        <label for="tipo">Qual o tipo de material</label>
+        <select name="material" id="tipo" style="display: block;">
             <option value="Texto">Texto</option>
             <option value="Video">Vídeo</option>
         </select>
-        <form action="" method="post" id="frmFile" enctype="multipart/form-data"> 
-            <input type="file" id="inputFile" name="file">
-            <button id="btnUpload">Upload</button>
+
+        <form action="" method="post" enctype="multipart/form-data"> 
+            <br>
+            <input type="file" name="file" style="color: black;">
+            <br><br><br><br><br>
+            <button id="btnEntrar">Upload</button>
         </form>
     </section>
     <footer><p>&copy; Copyrigth 2020 - Todos direitos reservados</p></footer>

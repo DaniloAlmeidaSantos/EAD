@@ -39,51 +39,51 @@
 
     <div class="container">
         <div class="wrapper">
-            1° Série
+            <a href="view/selecionarDisciplina.php?idTurma=11">1° Série</a>
         </div>
 
         <div class="wrapper">
-            2° Série
+            <a href="view/selecionarDisciplina.php?idTurma=10">2° Série</a>
         </div>
 
         <div class="wrapper">
-            3° Série
+            <a href="view/selecionarDisciplina.php?idTurma=9">3° Série</a>
         </div>
 
         <div class="wrapper">
-            4° Série
+            <a href="view/selecionarDisciplina.php?idTurma=8">4° Série</a>
         </div>
 
         <div class="wrapper">
-            5° Série
+            <a href="view/selecionarDisciplina.php?idTurma=7">5° Série</a>
         </div>
 
         <div class="wrapper">
-            6° Série
+            <a href="view/selecionarDisciplina.php?idTurma=6">6° Série</a>
         </div>
 
         <div class="wrapper">
-            7° Série
+            <a href="view/selecionarDisciplina.php?idTurma=5">7° Série</a>
         </div>
 
         <div class="wrapper">
-            8° Série
+            <a href="view/selecionarDisciplina.php?idTurma=4">8° Série</a>
         </div>
 
         <div class="wrapper">
-            1° Grau
+            <a href="view/selecionarDisciplina.php?idTurma=3">1° Grau</a>
         </div>
 
         <div class="wrapper">
-            2° Grau
+            <a href="view/selecionarDisciplina.php?idTurma=2">2° Grau</a>
         </div>
 
         <div class="wrapper">
-            3° Grau
+            <a href="view/selecionarDisciplina.php?idTurma=1">3° Grau</a>
         </div>
 
         <div class="wrapper">
-            outro
+           <a href="#"> outro</a>
         </div>
     </div>
 

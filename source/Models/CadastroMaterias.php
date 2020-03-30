@@ -8,13 +8,14 @@ class CadastroMaterias{
         $this->conn = connect();
     }
 
-    public function cadastrarMateria($idDisciplina, $nomeMateria, $descMateria, $idProfessor) {
+    public function cadastrarMateria($idDisciplina, $nomeMateria, $descMateria, $idProfessor, $idTurma) {
         try {
-            $stmt = $this->conn->prepare("INSERT INTO MATERIAS (ID_DISCIPLINA, NOME_MATERIA, DESCRICAO, ID_PROFESSOR) VALUES (?,?,?,?)");
+            $stmt = $this->conn->prepare("INSERT INTO MATERIAS (ID_DISCIPLINA, NOME_MATERIA, DESCRICAO, ID_PROFESSOR, ID_TURMA) VALUES (?,?,?,?,?)");
             $stmt->bindParam(1, $idDisciplina, PDO::PARAM_INT);
             $stmt->bindParam(2, $nomeMateria, PDO::PARAM_STR);
             $stmt->bindParam(3, $descMateria, PDO::PARAM_STR);
             $stmt->bindParam(4, $idProfessor, PDO::PARAM_INT);
+            $stmt->bindParam(5, $idTurma, PDO::PARAM_INT);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0){

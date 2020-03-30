@@ -28,13 +28,13 @@
 
     <div class="containerVideo">
         <div class="wrapperImgVideo">
-            <a href=""><img src="" alt=""></a>
+            <a href=''><img src='' alt=''></a>
 
-            <div class="titleVideo">
-                <div class="innerTitleImg">
-                    <img src="" alt="">
+            <div class='titleVideo'>
+                <div class='innerTitleImg'>
+                    <img src='' alt=''>
                 </div>
-                <div class="innerTitle">
+                <div class='innerTitle'>
                     <h2>Aula2: algaritmo</h2>
                     <h3>Por: Fulano</h3>
                 </div>

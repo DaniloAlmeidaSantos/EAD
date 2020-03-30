@@ -31,13 +31,13 @@
         ?>
     </p>
     <section id="">
+        <br>
+        <label for="tipo">Qual o tipo de material?</label>
+        <select name="serie" id="tipo" style="display: block;">
+            <option value="Vídeo">Vídeo</option>
+            <option value="Arquivo">Arquivo</option>
+        </select>
         <form action="" method="POST" id="containerUpload">
-            <br>
-            <label for="tipo">Qual o tipo de material?</label>
-            <select name="serie" id="tipo" style="display: block;">
-                <option value="Vídeo">Vídeo</option>
-                <option value="Arquivo">Arquivo</option>
-            </select>
             <br>
             <input type="file" style="color: black;">
             <br><br><br><br><br>

@@ -25,7 +25,6 @@
     if (isset($_GET['texto'])){
         $_SESSION['texto']          = $_GET['texto'];
         $_SESSION['idProfessor']    = $_GET['id'];
-        echo $_SESSION['texto'] . '-' . $_SESSION['idProfessor'];
     }
 ?>
 <!DOCTYPE html>
@@ -33,46 +32,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../design/css/index.css">
+    <link rel="stylesheet" href="../design/css/normalize.css">
     <script type="text/javascript" src="../libs/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../libs/js/jquery.form.js"></script>
     <title>EAD - Selecionar Matéria</title>
 </head>
 <body>
-    <h1>Selecione ou cadastre matérias</h1>
-    <h3>Escolha uma playlist de matérias para enviar suas aulas.</h3>
-    <section id="materia">
-        <fieldset> 
-            <legend>Informações da matéria</legend>
-            <form action="" method="POST">
-                <?php if (isset($_GET['cadastrar'])): ?>
-                    <input type="text" name="txtNomeMateria" value="<?php if (isset($_SESSION['texto'])) { echo $_SESSION['texto'];} ?>" placeholder="Nome da matéria*..." required><br><br>
-                    <textarea name="txtDescMateria" cols="30" rows="10" maxlength="160" placeholder="Descrição da matéria(opcional)...."></textarea>
-                    
-                    <p>Quer pesquisar novamente? <a href="?pesquisa">Clique aqui!</a></p>
-                    
-                    <button name='btnCadastro'>Prosseguir</button>
-                <?php elseif (isset($_GET['pesquisa'])): ?>
-                    <h2>Pesquise por uma matéria já existente</h2>
-                    <input type="text" name="txtNomeMateria" autocomplete="false" id="txtPesquisar" placeholder="Nome da matéria*..." required><br>
+    <nav>
+        <div class="wrapperNav">
+            <a href="index.php" id="home"><span class="material-icons" id="home">arrow_back</span></a>
+            <a href="#"><h1 class="preupTitle">Preencha as informações</h1></a>
+            
+        </div>
+    </nav>
 
-                    <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
-
-                    <div id="resultado"></div> <br>
-
-                    <button name='btnPesquisa'>Prosseguir</button>
-                <?php elseif (isset($_GET['texto'])): ?>
-                    <h2>Pesquise por uma matéria já existente</h2>
-                    <input type="text" name="txtNomeMateria" value="<?=$_GET['texto']?>" id="txtPesquisar" placeholder="Nome da matéria*..." required><br>
-
-                    <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
-
-                    <div id="resultado"></div> <br>
-
-                    <button name='btnPesquisa'>Prosseguir</button>
-                <?php endif;?>
+    <div class="containerLogin">
+        <h5>Informações da matéria</h5>
+        <h6>Pesquise uma matéria ja existente ou crie sua própria playlist de atividades.</h6>
+    </div>
+    
+    <section>
+        <form action="" method="POST" id="containerUpload">
+            <?php if (isset($_GET['cadastrar'])): ?>
+                <input type="text" name="txtNomeMateria" value="<?php if (isset($_SESSION['texto'])) { echo $_SESSION['texto'];} ?>" placeholder="Nome da matéria" required><br><br>
+                <textarea name="txtDescMateria" cols="30" rows="10" maxlength="160" placeholder="Descrição da matéria (opcional)"></textarea>
                 
-            </form>
-        </fieldset>
+                <p>Quer pesquisar novamente? <a href="?pesquisa">Clique aqui!</a></p>
+                
+                <button name='btnCadastro'>Prosseguir</button>
+            <?php elseif (isset($_GET['pesquisa'])): ?>
+                <input type="text" name="txtNomeMateria" id="txtPesquisar" placeholder="Pesquise pelo nome da matéria" required><br>
+
+                <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
+
+                <div id="resultado"></div> <br>
+
+                <button name='btnPesquisa'>Prosseguir</button>
+            <?php elseif (isset($_GET['texto'])): ?>
+                <input type="text" name="txtNomeMateria" value="<?=$_GET['texto']?>" id="txtPesquisar" placeholder="Pesquise pelo nome da matéria" required><br>
+
+                <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
+
+                <div id="resultado" ></div> <br>
+
+                <button name='btnPesquisa'>Prosseguir</button>
+            <?php endif;?>
+            
+        </form>
     </section>
     <script src="../source/ajax/pesquisaMaterias.js"></script>
 </body>

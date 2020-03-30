@@ -162,6 +162,10 @@ header p {
     text-align: center;
 }
 
+.wrapper > a {
+    color: var(--utils);
+}
+
 .container .wrapper:nth-child(12) {
     opacity: 0;
 }
