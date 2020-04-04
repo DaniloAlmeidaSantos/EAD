@@ -15,8 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="design/css/index.css">
+    <link rel="stylesheet" href="design/css/mobile.css">
     <link rel="stylesheet" href="design/css/normalize.css">
+    <link rel="stylesheet" href="design/css/tablet.css">
 </head>
 <body>
     <nav>
@@ -27,7 +28,7 @@
     </nav>
 
     <header>
-        <div class="backgroundBlack"></div>
+        <div class="imgheader"></div>
         <div class="wrapperHeader">
             <h1>EAD</h1>
             <h3>Sistema para auxílio educacional dos estudantes perante à querentena.</h3>

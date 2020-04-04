@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design/css/index.css">
+    <link rel="stylesheet" href="design/css/mobile.css">
     <link rel="stylesheet" href="design/css/normalize.css">
+    <link rel="stylesheet" href="design/css/tablet.css">
     <title>EAD - Upload</title>
 </head>
 <body>
@@ -12,7 +13,6 @@
         <div class="wrapperNav">
             <a href="index.php" id="home"><span class="material-icons" id="home">arrow_back</span></a>
             <a href="#"><h1 class="preupTitle">Preencha as informações</h1></a>
-            
         </div>
     </nav>
 
@@ -34,7 +34,7 @@
             }
         ?>
     </p>
-    <section>
+    <section class="ContainerForm">
         <form action="" method="POST" id="containerUpload">
             <input type="text" name="txtTitulo" placeholder="Nome da Atividade / aula" required>
             <br>
@@ -67,7 +67,7 @@
                 <option value="7">Infomática</option>
             </select>
             <br>
-            <textarea name="txtDescDisciplina" cols="30" rows="50" placeholder="Descrição da atividade (opcional)" maxlength="200"></textarea>
+            <textarea name="txtDescDisciplina" cols="30" rows="50" placeholder="Descrição da atividade (opcional)" maxlength="200" style="font-size: 1.5em;"></textarea>
             <br><br>
             <button id="btnEntrar" name="btnProsseguir">Prosseguir</button>
         </form>

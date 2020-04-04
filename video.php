@@ -6,8 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design/css/index.css">
+    <link rel="stylesheet" href="design/css/mobile.css">
     <link rel="stylesheet" href="design/css/normalize.css">
+    <link rel="stylesheet" href="design/css/tablet.css">
     <title>EAD</title>
 </head>
 <body>
@@ -34,6 +35,10 @@
         <div class="wrapperContent">
             <div class="Squarefile">
                 <div class="fileName">Exemplo da aulaExemplo da aula</div>
+            </div>
+
+            <div class="Squarefile">
+                <div class="fileName">Exemplo da aula</div>
             </div>
 
             <div class="Squarefile">

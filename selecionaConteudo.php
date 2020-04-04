@@ -6,8 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design/css/index.css">
+    <link rel="stylesheet" href="design/css/mobile.css">
     <link rel="stylesheet" href="design/css/normalize.css">
+    <link rel="stylesheet" href="design/css/tablet.css">
     <title>EAD</title>
 </head>
 <body>
@@ -28,17 +29,31 @@
 
     <div class="containerVideo">
         <div class="wrapperImgVideo">
-            <a href=''><img src='' alt=''></a>
+            <a href=''><img src='design/imagens/turmas.jpg' alt=''></a>
 
-            <div class='titleVideo'>
-                <div class='innerTitleImg'>
-                    <img src='' alt=''>
-                </div>
-                <div class='innerTitle'>
-                    <h2>Aula2: algaritmo</h2>
-                    <h3>Por: Fulano</h3>
-                </div>
-            </div>
+            <h2>Aula2: algaritmo e funções de grau alto</h2>
+            <h3>Por: Fulano</h3>
+        </div>
+
+        <div class="wrapperImgVideo">
+            <a href=''><img src='design/imagens/turmas.jpg' alt=''></a>
+            
+            <h2>Aula2: algaritmo</h2>
+            <h3>Por: Fulano</h3>
+        </div>
+
+        <div class="wrapperImgVideo">
+            <a href=''><img src='design/imagens/turmas.jpg' alt=''></a>
+            
+            <h2>Aula2: algaritmo</h2>
+            <h3>Por: Fulano</h3>
+        </div>
+
+        <div class="wrapperImgVideo">
+            <a href=''><img src='design/imagens/turmas.jpg' alt=''></a>
+            
+            <h2>Aula2: algaritmo</h2>
+            <h3>Por: Fulano</h3>
         </div>
     </div>
 </body>
