@@ -6,13 +6,13 @@
     $array  = $_SESSION['preUpload'];
 
     if (isset($_POST['btnTexto'])) {
-        if ($conn->arquivoTexto($array['disciplinas'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])) {
+        if ($conn->arquivoTexto($array['turma'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])) {
             header('location: preUpload.php?voltar=true');
         } else {
             echo $_SESSION['error'];
         } 
     } elseif (isset($_POST['btnVideo'])) {
-        if ($conn->videoAula($array['disciplinas'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])){
+        if ($conn->videoAula($array['turma'], $array['titulo'], $array['descDisciplina'], $array['idProfessor'], $_SESSION['idMateria'])){
             header('location: preUpload.php?voltar=true');
         } else {
             echo $_SESSION['error'];;
@@ -24,7 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../design/css/index.css">
+    <link rel="stylesheet" href="../design/css/mobile.css">
     <link rel="stylesheet" href="../design/css/normalize.css">
     <title>EAD - Upload</title>
 </head>
@@ -44,7 +44,7 @@
         <p style="color: red;">
             <?php 
                 if (isset($_SESSION['error'])){
-                    echo $_SESSION['error'];
+                    echo "<p style='color: red;'>" . $_SESSION['error'] . "</p>";
                 }
             ?>
         </p>
@@ -62,7 +62,6 @@
             <button id="btnEntrar">Upload</button>
         </form>
     </section>
-    <footer><p>&copy; Copyrigth 2020 - Todos direitos reservados</p></footer>
     <script src="../source/js/upload.js"></script>
 </body>
 </html>

@@ -22,8 +22,8 @@
 <body>
     <nav>
         <div class="wrapperNav">
-            <a href="#"><h1>EAD</h1></a>
-            <a href="<?=$_SESSION['link']?>" id="link"><?=$_SESSION['login']?></a>
+            <a href="#"><h1 style="display: inline-block;;">EAD</h1></a>
+            <a href="<?=$_SESSION['link']?>" style="float: right; font-size: 20px;" id="link"><b><?=$_SESSION['login']?></b></a>
         </div>
     </nav>
 

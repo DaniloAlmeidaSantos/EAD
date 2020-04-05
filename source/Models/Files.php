@@ -22,10 +22,10 @@ class Files {
         
         if (array_search($extension, $_UP['extensions']) === false) {
             $_SESSION['error']  = "Por favor envie arquivos com formatos .pdf, .ppt, .doc ou .docx";
-            exit;
+            return false;
         } elseif ($_UP['size'] < $file['size']) {
             $_SESSION['error']  = "Por favor insira um arquivo com tamanho de armazenamento de 5 MB ou menos";
-            exit;
+            return false;
         } else {
             $atividade          = uniqid(time()) . "." . $extension;
             $_SESSION['error']  = null;
@@ -57,7 +57,7 @@ class Files {
     public function videoAula($idTurma, $titulo, $descricao, $idProfessor, $idMateria) {
         $_UP['folder']       = '../files/video/';
         $_UP['size']         = 1024*1024*50; // 50 MB
-        $_UP['extensions']   = array('mp4', 'avi', 'wmv');
+        $_UP['extensions']   = array('mp4');
         $_UP['rename']       = true;
         
         $files_tmp          = $_FILES['file']['tmp_name'];
@@ -67,11 +67,11 @@ class Files {
         $extension          = strtolower($extension);
         
         if (array_search($extension, $_UP['extensions'] === false)) {
-            $_SESSION['error']  = "Por favor envie arquivos com formatos .mp4 ou .avi";
-            exit;
+            $_SESSION['error']  = "Por favor envie arquivos com formato .mp4";
+            return false;
         } elseif ($_UP['size'] < $file['size']) {
             $_SESSION['error']  = "Por favor insira um arquivo com tamanho de armazenamento de 50 MB ou menos";
-            exit;
+            return false;
         } else {
             $video        = uniqid(time()). "." . $extension;
             $_SESSION['error']          = null;

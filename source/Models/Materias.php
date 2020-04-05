@@ -17,19 +17,11 @@ class Materias {
 
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<div class='wrapperImgVideo'>
-                            <a href='conteudo.php?{$row['m_id']}'><img src='' alt=''></a>
-
-                            <div class='titleVideo'>
-                                <div class='innerTitleImg'>
-                                    <img src='' alt=''>
-                                </div>
-                                <div class='innerTitle'>
-                                    <h2>Matéria: {$row['NOME_MATERIA']}</h2>
-                                    <h3>Por: {$row['idTurma']}</h3>
-                                </div>
-                            </div>
-                        </div>";
+                    echo "<div class='wrapperMateria'>
+                        <a href='selecionarConteudo.php?id={$row['m_id']}'>
+                            <button>{$row['NOME_MATERIA']}</button>
+                        </a>
+                    </div>";
                 }
                 return true;
             } else {

@@ -32,7 +32,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../design/css/index.css">
+    <link rel="stylesheet" href="../design/css/mobile.css">
     <link rel="stylesheet" href="../design/css/normalize.css">
     <script type="text/javascript" src="../libs/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../libs/js/jquery.form.js"></script>
@@ -58,25 +58,25 @@
                 <input type="text" name="txtNomeMateria" value="<?php if (isset($_SESSION['texto'])) { echo $_SESSION['texto'];} ?>" placeholder="Nome da matéria" required><br><br>
                 <textarea name="txtDescMateria" cols="30" rows="10" maxlength="160" placeholder="Descrição da matéria (opcional)"></textarea>
                 
-                <p>Quer pesquisar novamente? <a href="?pesquisa">Clique aqui!</a></p>
+                <p style="color: black;">Quer pesquisar novamente? <a href="?pesquisa">Clique aqui!</a></p>
                 
-                <button name='btnCadastro'>Prosseguir</button>
+                <button name='btnCadastro' class="btn btn-primary">Prosseguir</button>
             <?php elseif (isset($_GET['pesquisa'])): ?>
                 <input type="text" name="txtNomeMateria" id="txtPesquisar" placeholder="Pesquise pelo nome da matéria" required><br>
 
-                <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
+                <p style="color: black;">Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
 
                 <div id="resultado"></div> <br>
 
-                <button name='btnPesquisa'>Prosseguir</button>
+                <button name='btnPesquisa' class="btn btn-primary">Prosseguir</button>
             <?php elseif (isset($_GET['texto'])): ?>
                 <input type="text" name="txtNomeMateria" value="<?=$_GET['texto']?>" id="txtPesquisar" placeholder="Pesquise pelo nome da matéria" required><br>
 
-                <p>Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
+                <p style="color: black;">Quer adicionar uma nova matéria? <a href="?cadastrar">Clique aqui!</a></p>
 
                 <div id="resultado" ></div> <br>
 
-                <button name='btnPesquisa'>Prosseguir</button>
+                <button name='btnPesquisa' class="btn btn-primary">Prosseguir</button>
             <?php endif;?>
             
         </form>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../design/css/index.css">
+    <link rel="stylesheet" href="../design/css/mobile.css">
     <link rel="stylesheet" href="../design/css/normalize.css">
     <title>EAD - Upload</title>
 </head>
 <body>
     <nav>
         <div class="wrapperNav">
-            <a href="index.php" id="home"><span class="material-icons" id="home">arrow_back</span></a>
+            <a href="../index.php" id="home"><span class="material-icons" id="home">arrow_back</span></a>
             <a href="#"><h1 class="preupTitle">Preencha as informações</h1></a>
             
         </div>
@@ -25,7 +25,7 @@
         <p style="color: red;">
             <?php 
                 if (isset($_SESSION['error'])){
-                    echo $_SESSION['error'];
+                    echo "<h3>" . $_SESSION['error'] . "</h3>";
                 }
             ?>
         </p>

@@ -14,7 +14,7 @@ $stmt->execute();
 $cont = 0;
 if ($stmt->rowCount() > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "<a href='?texto={$row['NOME_MATERIA']}&id={$row['ID_PROFESSOR']}'>{$row['NOME_MATERIA']}</a> - by: <i> {$row['NOME']} </i><br>";
+        echo "<a href='?texto={$row['NOME_MATERIA']}&id={$row['ID_PROFESSOR']}'>{$row['NOME_MATERIA']}</a> - <i style='color: black;'> by:  {$row['NOME']} </i><br>";
         $cont++;
     }
 } else {
