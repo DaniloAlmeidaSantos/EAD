@@ -1,4 +1,4 @@
-# Ambiente de Ensino a distancia
+# Ambiente de Ensino a distância
 
 ### Esta aplicação tem como objetivo fazer um intermédio entre o professor e o aluno, para que ambos possam ter acesso a uma plataforma que permite enviar e acessar aulas enviadas pelos pelos professores.
 
