@@ -4,7 +4,7 @@
     $conteudo = new Conteudo();
 
     if (isset($_GET['id'])) {
-        $_SESSION['id'] = $_GET['id'];
+        $_SESSION['idMateria'] = $_GET['id'];
     }
 ?>
 <!DOCTYPE html>

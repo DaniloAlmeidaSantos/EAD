@@ -10,7 +10,7 @@ class Conteudo {
     
     public function getConteudoAtividade ($idTurma, $idMateria) {
         try {
-            $stmt = $this->conn->prepare('SELECT A.ID AS idA, P.NOME, A.TITULO FROM ATIVIDADES AS A INNER JOIN PROFESSORES AS P ON (A.ID_PROFESSOR = P.ID) WHERE A.ID_TURMA = ? AND A.ID_MATERIA = ?');
+            $stmt = $this->conn->prepare('SELECT A.ID AS idA, A.ID_MATERIA, P.NOME, A.TITULO FROM ATIVIDADES AS A INNER JOIN PROFESSORES AS P ON (A.ID_PROFESSOR = P.ID) WHERE A.ID_TURMA = ? AND A.ID_MATERIA = ?');
             $stmt->bindParam(1, $idTurma, PDO::PARAM_INT);
             $stmt->bindParam(2, $idMateria, PDO::PARAM_INT);
             $stmt->execute();
@@ -18,7 +18,7 @@ class Conteudo {
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<div class='wrapperImgVideo'>
-                        <a href='texto.php?id={$row['idA']}&true' style='color: white;'>
+                        <a href='pdf.php?idAtt={$row['ID_MATERIA']}&true' style='color: white;'>
                             <img src='../design/imagens/turmas.jpg'>
                             
                             <h2>Aula: {$row['TITULO']}</h2>

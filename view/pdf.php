@@ -2,17 +2,6 @@
     session_start();
     require_once '../source/Models/MostrarConteudo.php';
     $conteudo = new MostrarConteudo();
-
-    if (isset($_GET['id'])) {
-        $_SESSION['total'] = count($_SESSION['track']);
-        for ($i=0; $_SESSION['total'] >= $i; $i++ ) {
-            if (isset($_SESSION['track'][$i])){
-                if ($_SESSION['track'][$i] == $_GET['id']) {
-                    $_SESSION['cont'] = $i;
-                } 
-            }
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,9 +31,10 @@
     <div class="containerReproducao">
         <div class="wrapperVideo">
             <?php
-                $conteudo->video();
+                $conteudo->getPdf($_GET['idAtt']);
             ?> 
         </div>
+
         <h1>PROCURE POR AULAS / ATIVIDADES: </h1>
         <div class="wrapperContent">
             <?php
