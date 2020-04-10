@@ -43,9 +43,9 @@
         <div class="containerVideo">
             <?php 
                 if (isset($_GET['getTexto'])){
-                    $conteudo->getConteudoAtividade($_SESSION['idTurma'], $_SESSION['id']);
+                    $conteudo->getConteudoAtividade($_SESSION['idTurma'], $_SESSION['idMateria']);
                 } elseif (isset($_GET['getVideo'])) {
-                    $conteudo->getConteudoVideo($_SESSION['idTurma'], $_SESSION['id']);
+                    $conteudo->getConteudoVideo($_SESSION['idTurma'], $_SESSION['idMateria']);
                 }
             ?>
         </div>
